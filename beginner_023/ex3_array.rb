@@ -1,17 +1,17 @@
 def main
-  row, column, k = gets.split.map(&amp;:to_i)
+  row, column, k = gets.split.map(&:to_i)
   n = gets.strip!.to_i
 
   map = {}
   (1..row).each do |r|
     c = []
-    column.times {|i| c &lt;&lt; 0 }
+    column.times {|i| c << 0 }
     map.store(r, c)
   end
 
   r_c = []
   (1..n).each do |i|
-    r, c = gets.split.map(&amp;:to_i)
+    r, c = gets.split.map(&:to_i)
     map[r][c-1] = 1
   end
 

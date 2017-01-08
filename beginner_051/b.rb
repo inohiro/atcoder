@@ -3,9 +3,8 @@ k,s = ks.split(' ').map(&:to_i)
 
 count = 0
 
-perms = Array(0..k).repeated_permutation(3)
-perms.each do |perm|
-  count += 1 if perm.inject {|sum,n| sum + n } == s
-end
-
+Array(0..k).repeated_permutation(2) {|x,y|
+  z = s - x - y
+  count += 1 if (0..k).include?(z)
+}
 puts count
